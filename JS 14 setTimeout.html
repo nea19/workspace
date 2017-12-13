@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    // 1是对的
+    setTimeout(f1,3000);
+    function f1() {
+        console.log(1)
+    }
+
+    // 2是对的
+    setTimeout(function() {
+        console.log(2)
+    },3000);
+
+
+    // 3会立刻输出
+    setTimeout(f3(),3000);
+    function f3() {
+        console.log(3)
+    }
+
+    // 4会立刻输出
+    setTimeout(console.log(4),3000);
+
+
+
+
+
+    // 9会报错
+    setTimeout(f9(),3000);
+    var f9 = function () {
+        console.log(9)
+    }
+
+</script>
+</html>

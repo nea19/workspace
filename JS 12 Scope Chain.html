@@ -12,13 +12,18 @@
 
 </body>
 <script>
-    var a = 1
+    var a = 0
     function f1() {
-        var a = 2
+        var a = 1
         function f2() {
-            // var a = 3
+             var a = 2
             function f3() {
-                console.log(a);
+//                var a = 3;
+                function f4() {
+//                    var a = 4;
+                    console.log(a);
+                }
+                f4();
             }
             f3();
         }
@@ -26,5 +31,6 @@
     }
     f1();
 
+    // 结果2
 </script>
 </html>
