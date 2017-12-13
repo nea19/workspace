@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#b0e0e6, white 450px, #b0e0e6 0)t;
+            min-height: 100vh;
+        }
+        .ball {
+            width: 0;
+            height: 0;
+            margin: auto;
+
+            background:url(http://2.im.guokr.com/6aayzpu-KhZt-w78cLx0A0sSPOx8E8_86S5BMB7-SPbLAAAAngAAAFBO.png);
+            background-size:cover;
+            padding: 1.5em 2em;
+            /*border-radius: 50%;
+            background: red radial-gradient(at 30% 30%, #fdd, #b0e0e6);
+            padding: 1.5em;*/
+
+            animation: bounce 3s infinite;
+            animation-timing-function: cubic-bezier(.1,.25,1,.25) ;
+        }
+
+
+        @keyframes bounce {
+            60%, 80%, to {
+                transform: translateY(400px);
+                animation-timing-function: ease;
+            }
+            70% { transform: translateY(300px); }
+            90% { transform: translateY(360px); }
+        }
+        /* @keyframes bounce {
+            60%, 80%, to {
+                transform: translateY(400px);
+            }
+            70% { transform: translateY(300px); }
+            90% { transform: translateY(360px); }
+        } */
+    </style>
+</head>
+<body>
+<div class="ball"></div>
+</body>
+<script>
+</script>
+</html>

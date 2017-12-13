@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .avatar {
+            animation: spin 3s infinite linear;
+            transform-origin: 50% 150px;/* 150px = path radius */
+        }
+        .avatar img {
+            animation: inherit;
+            animation-name: spin-reverse;
+        }
+
+        .path {
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 50%;
+            background: #b0e0e6;
+            margin: 50px auto;
+        }
+
+        .avatar {
+            width: 100px;
+            margin: 0 auto;
+        }
+        .avatar img {
+            display: block;
+            width: inherit;
+        }
+        @keyframes spin {
+            to {transform: rotate(1turn);}
+        }
+        @keyframes spin-reverse {
+            from {transform: rotate(1turn);}
+        }
+    </style>
+</head>
+<body>
+<div class="path">
+    <div class="avatar">
+        <img src="http://2.im.guokr.com/fA6XI3XKMRLAfeqySXx1pf69VZHrSM8MiBZCx_4acSnQAAAAngAAAFBO.png" />
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #A2BFCE;
+            padding: 10px;
+        }
+        .cloud {
+            position: absolute;
+        }
+        #bigcloud {
+            margin-left: 100px;
+            margin-top: 15px;
+            animation: bobble 2s infinite;
+        }
+        #smallcloud {
+            animation: bobble 1s infinite;
+            margin-top: 165px;
+            margin-left: 200px;
+        }
+
+        @keyframes bobble {
+            0% {
+                transform: translate(50px, 40px);
+                animation-timing-function: ease-in;
+            }
+            50% {
+                transform: translate(60px, 50px);
+                animation-timing-function: ease-out;
+            }
+            100% {
+                transform: translate(50px, 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+<img id="bigcloud" alt="#" class="cloud" height="154" src="https://www.kirupa.com/images/bigCloud.png" width="238">
+<img id="smallcloud" alt="#" class="cloud" height="103" src="https://www.kirupa.com/images/smallCloud.png" width="158">
+
+<!-- <img id="bigcloud" alt="#" class="cloud" src="http://1.im.guokr.com/oGgeveGidfVefvigu7bL_QOOF5uuyv_C_CDFL6xRBtfRAAAAnQAAAFBO.png" width="238">
+<img id="smallcloud" alt="#" class="cloud" src="http://2.im.guokr.com/6aayzpu-KhZt-w78cLx0A0sSPOx8E8_86S5BMB7-SPbLAAAAngAAAFBO.png" width="158"> -->
+
+</body>
+</html>

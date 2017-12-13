@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .avatar {
+            display: block;
+            width: 100px;
+            margin: calc(50% - 25px) auto 0;
+            overflow: hidden;
+        }
+        .path {
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 50%;
+            background: #b0e0e6;
+        }
+        .avatar {
+            animation: spin 3s infinite linear;
+        }
+        @keyframes spin{
+            from{
+                transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn);
+            }
+            to {
+                transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="path">
+    <img src="http://2.im.guokr.com/fA6XI3XKMRLAfeqySXx1pf69VZHrSM8MiBZCx_4acSnQAAAAngAAAFBO.png"  class="avatar"/>
+</div>
+</body>
+</html>
