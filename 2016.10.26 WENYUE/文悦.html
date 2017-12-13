@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>文悦</title>
+	<style type="text/css">
+		@font-face {
+ font-family: 'wenyue';
+ src: url('./wenyue.otf');
+}
+
+h1 {
+  font-family: 'wenyue';
+}
+
+
+
+        
+@-webkit-keyframes ball-scale-ripple {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 1; }
+
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7; }
+
+  100% {
+    opacity: 0.0; } }
+
+@keyframes ball-scale-ripple {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 1; }
+
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7; }
+
+  100% {
+    opacity: 0.0; } }
+
+.ball-scale-ripple > div {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21, .53, .56, .8);
+          animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21, .53, .56, .8); }
+
+        .animate-bounce-up{
+            -webkit-animation: bounce-up 1.4s linear infinite;
+            animation: bounce-up 1.4s linear infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>哈哈哈哈哈哈哈</h1>
+    <div class="loader-inner ball-scale-ripple"><div></div></div>
+</body>
+</html>
+
+

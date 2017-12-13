@@ -1,0 +1,801 @@
+@charset "GBK";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  color: #303030; }
+
+/* ios默认文本框阴影 */
+input[type=text], textarea {
+  -webkit-appearance: none; }
+
+/* 低版本安卓文本框层级问题 */
+input:focus {
+  -webkit-user-modify: read-write-plaintext-only; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "SimHei","Helvetica Neue",Arial,"Droid Sans", sans-serif; }
+
+html, body {
+  width: 100%; }
+
+html {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: 100%; }
+
+a, button, input {
+  outline: 0 none;
+  text-decoration: none; }
+
+img {
+  border: 0 none;
+  vertical-align: bottom;
+  -ms-interpolation-mode: bicubic; }
+
+.hide {
+  display: none; }
+
+.fr {
+  float: right; }
+
+.fl {
+  float: left; }
+
+.txtc {
+  text-align: center; }
+
+.clr {
+  clear: both; }
+
+.common-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #fff; }
+
+/* loading */
+html, body, .common-wrapper {
+  height: 100%; }
+
+.section {
+  background: #c91623;
+  width: 100%;
+  height: 100%; }
+
+.music-box {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 100; }
+  .music-box .music {
+    background: url(i/music.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: 100% 100%; }
+  .music-box .heart1, .music-box .heart4 {
+    background: url(i/music2.png) no-repeat;
+    width: 12px;
+    height: 11px;
+    background-size: 100% 100%;
+    position: absolute; }
+  .music-box .heart2, .music-box .heart3 {
+    background: url(i/music3.png) no-repeat;
+    width: 12px;
+    height: 11px;
+    background-size: 100% 100%;
+    position: absolute; }
+  .music-box .heart1 {
+    top: 0px;
+    left: 0px;
+    opacity: 0; }
+  .music-box .heart2 {
+    top: 10px;
+    right: 0px;
+    opacity: 0; }
+  .music-box .heart3 {
+    top: 20px;
+    right: 15px;
+    opacity: 0; }
+  .music-box .heart4 {
+    top: 13px;
+    left: -16px;
+    opacity: 0; }
+
+.heart-propagation {
+  animation: propagation 2s infinite linear 0s;
+  -webkit-animation: propagation 2s infinite linear 0s; }
+
+.music-roll {
+  animation: rotate 3s infinite linear 0s;
+  -webkit-animation: rotate 3s infinite linear 0s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both; }
+
+.fore1 {
+  position: relative; }
+  .fore1 .login {
+    background: url(i/login.png) no-repeat;
+    width: 162px;
+    height: 24px;
+    background-size: 162px 24px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -81px;
+    margin-top: -12px; }
+    .fore1 .login .count {
+      font-size: 22px;
+      color: #96000b;
+      margin: -26px 0px 0px 15px; }
+    .fore1 .login .loading {
+      background: url(i/login-loading.png) no-repeat;
+      width: 6px;
+      height: 16px;
+      background-size: 6px 16px;
+      float: left;
+      margin: 4px 5px 0px 0px;
+      display: none; }
+      .fore1 .login .loading:nth-child(1) {
+        margin-left: 26px; }
+
+.fore4 {
+  position: relative;
+  background: url(i/run-bg.png) no-repeat;
+  background-size: 100% 100%; }
+  .fore4 .box {
+    position: absolute;
+    width: 64%;
+    height: 40%;
+    top: 45%;
+    left: 50%;
+    margin-left: -32%;
+    margin-top: -42%; }
+    .fore4 .box div {
+      width: 100%;
+      height: 30%;
+      background-size: 100% 100%;
+      opacity: 0; }
+  .fore4 .opacityIn {
+    animation: opacityIn 2s;
+    -webkit-animation: opacityIn 2s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore4 .txt1 {
+    background: url(i/618.png) no-repeat; }
+  .fore4 .txt2 {
+    background: url(i/des.png) no-repeat;
+    margin-top: 10px; }
+  .fore4 .txt3 {
+    background: url(i/des2.png) no-repeat;
+    margin-top: 10px; }
+
+.fore3 {
+  position: relative;
+  /* spell */
+  /* we-txt */
+  /* we-num */ }
+  .fore3 .square {
+    background: url(i/we-bg2.png) center center;
+    position: absolute;
+    width: 64%;
+    height: 50%;
+    top: 45%;
+    left: 50%;
+    margin-left: -32%;
+    margin-top: -32%; }
+  .fore3 .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px; }
+  .fore3 .square2 {
+    background: #c91623;
+    width: 1px;
+    height: 1px; }
+  .fore3 .square-bigger2 {
+    animation: bigger2 1s;
+    -webkit-animation: bigger2 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore3 .spell-wo {
+    background: url(i/we-spell-wo.png) no-repeat;
+    margin-left: -20%;
+    left: 50%; }
+  .fore3 .spell-men {
+    background: url(i/we-spell-men.png) no-repeat;
+    margin-right: -63%;
+    right: 50%; }
+  .fore3 .spell-wo, .fore3 .spell-men {
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    top: 45%;
+    margin-top: -50%;
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%; }
+  .fore3 .spell-extrusion-wo {
+    animation: extrusion-wo 2s infinite;
+    -webkit-animation: extrusion-wo 2s infinite; }
+  .fore3 .spell-extrusion-men {
+    animation: extrusion-men 2s infinite;
+    -webkit-animation: extrusion-men 2s infinite; }
+  .fore3 .we-txt {
+    background: url(i/we-txt.png) no-repeat;
+    width: 100%;
+    height: 40%;
+    background-size: 100% 100%;
+    margin-bottom: 20px; }
+  .fore3 .opacityIn {
+    animation: opacityIn 1s;
+    -webkit-animation: opacityIn 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore3 .rotate {
+    animation: rotate 0.3s;
+    -webkit-animation: rotate 0.3s; }
+  .fore3 .scaleZ {
+    animation: scaleZ .3s;
+    -webkit-animation: scaleZ .3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore3 .we-6 {
+    background: url(i/we-6.png) no-repeat;
+    height: 45%;
+    width: 28%; }
+  .fore3 .we-dot {
+    background: url(i/we-dot.png) no-repeat;
+    height: 45%;
+    width: 24%; }
+  .fore3 .we-1 {
+    background: url(i/we-1.png) no-repeat;
+    height: 45%;
+    width: 20%; }
+  .fore3 .we-8 {
+    background: url(i/we-8.png) no-repeat;
+    height: 45%;
+    width: 28%; }
+  .fore3 .we-6, .fore3 .we-dot, .fore3 .we-1, .fore3 .we-8 {
+    background-size: 100% 100%;
+    float: left; }
+
+.fore5 {
+  position: relative; }
+  .fore5 .run-man1, .fore5 .run-man2 {
+    position: absolute; }
+  .fore5 .run-man1 {
+    background: url(i/run-man2.png) no-repeat;
+    width: 90%;
+    height: 35%;
+    background-size: 100% 100%;
+    right: -6%;
+    top: 100%;
+    margin-right: -50%;
+    margin-top: -30%; }
+  .fore5 .run-man2 {
+    background: url(i/run-man.png) no-repeat;
+    width: 70%;
+    height: 35%;
+    background-size: 100% 100%;
+    top: 3%;
+    margin-right: -40%;
+    margin-top: 10px;
+    right: 50%; }
+  .fore5 .arm {
+    background: url(i/run-man3.png) no-repeat;
+    position: absolute;
+    opacity: 0;
+    width: 16%;
+    height: 45%;
+    background-size: 100% 100%;
+    margin-top: 21%;
+    margin-left: 9%; }
+  .fore5 .box {
+    position: absolute;
+    width: 75%;
+    height: 40%;
+    top: 40%;
+    left: 50%;
+    margin-left: -38%; }
+    .fore5 .box .run-encourage {
+      background: url(i/run-encourage.png) no-repeat;
+      margin-left: 8%;
+      width: 84%;
+      height: 20%;
+      background-size: 100% 100%;
+      opacity: 0; }
+    .fore5 .box .run-type1 {
+      background: url(i/run-type1.png) no-repeat; }
+    .fore5 .box .run-type2 {
+      background: url(i/run-type2.png) no-repeat; }
+    .fore5 .box .run-type3 {
+      background: url(i/run-type3.png) no-repeat; }
+    .fore5 .box .run-type4 {
+      background: url(i/run-type4.png) no-repeat; }
+    .fore5 .box .run-type1-active {
+      background: url(i/run-type1-active.png) no-repeat; }
+    .fore5 .box .run-type2-active {
+      background: url(i/run-type2-active.png) no-repeat; }
+    .fore5 .box .run-type3-active {
+      background: url(i/run-type3-active.png) no-repeat; }
+    .fore5 .box .run-type4-active {
+      background: url(i/run-type4-active.png) no-repeat; }
+    .fore5 .box .run-type {
+      width: 47%;
+      height: 35%;
+      background-size: 100% 100%;
+      margin-top: 3%; }
+  .fore5 .runningman {
+    animation: runningman 0.8s;
+    -webkit-animation: runningman 0.8s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore5 .opacityIn {
+    animation: opacityIn 1s;
+    -webkit-animation: opacityIn 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore5 .armmove {
+    animation: armmove 1s infinite;
+    -webkit-animation: armmove 1s infinite;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .fore5 .scaleZ {
+    animation: scaleZ2 .3s;
+    -webkit-animation: scaleZ2 .3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+
+.logo {
+  background: url(i/logo.png) no-repeat;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  margin-left: -56px;
+  width: 113px;
+  height: 16px;
+  background-size: 113px 16px; }
+
+/* hh keyframe */
+@keyframes propagation {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0;
+    top: -15px; } }
+@-webkit-keyframes propagation {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0;
+    top: -15px; } }
+@keyframes armmove {
+  0% {
+    opacity: 1;
+    margin-top: 21%; }
+
+  50% {
+    opacity: 1;
+    margin-top: 23%; }
+
+  100% {
+    opacity: 1;
+    margin-top: 21%; } }
+@-webkit-keyframes armmove {
+  0% {
+    opacity: 1;
+    margin-top: 21%; }
+
+  50% {
+    opacity: 1;
+    margin-top: 23%; }
+
+  100% {
+    opacity: 1;
+    margin-top: 21%; } }
+@keyframes runningman {
+  0% {
+    right: -6%;
+    top: 100%;
+    margin-right: -50%;
+    margin-top: -30%; }
+
+  20% {
+    right: 100%;
+    top: 60%; }
+
+  40% {
+    right: -50%;
+    top: 50%; }
+
+  60% {
+    right: 100%;
+    top: 20%; }
+
+  80% {
+    right: -50%;
+    top: 20%; }
+
+  100% {
+    right: 50%;
+    top: 3%;
+    margin-right: -50%;
+    margin-top: 3%; } }
+@-webkit-keyframes runningman {
+  0% {
+    right: -6%;
+    top: 100%;
+    margin-right: -50%;
+    margin-top: -30%; }
+
+  20% {
+    right: 100%;
+    top: 60%; }
+
+  40% {
+    right: -50%;
+    top: 50%; }
+
+  60% {
+    right: 100%;
+    top: 20%; }
+
+  80% {
+    right: -50%;
+    top: 20%; }
+
+  100% {
+    right: 50%;
+    top: 3%;
+    margin-right: -50%;
+    margin-top: 3%; } }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(359deg); } }
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(359deg); } }
+@keyframes bigger2 {
+  0% {
+    width: 1px;
+    height: 1px;
+    margin: 50%; }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    margin: 0px; } }
+@-webkit-keyframes bigger2 {
+  0% {
+    width: 1px;
+    height: 1px;
+    margin: 50%; }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    margin: 0px; } }
+@keyframes extrusion-wo {
+  0% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; }
+
+  70% {
+    width: 55%;
+    height: 47%;
+    background-size: 25% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -22.5%; }
+
+  80% {
+    width: 47%;
+    height: 51%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -19.5%; }
+
+  85% {
+    width: 53%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20.5%; }
+
+  95% {
+    width: 49%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; }
+
+  100% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; } }
+@-webkit-keyframes extrusion-wo {
+  0% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; }
+
+  70% {
+    width: 55%;
+    height: 47%;
+    background-size: 25% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -22.5%; }
+
+  80% {
+    width: 47%;
+    height: 51%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -19.5%; }
+
+  85% {
+    width: 53%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20.5%; }
+
+  95% {
+    width: 49%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; }
+
+  100% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -20%; } }
+@keyframes extrusion-men {
+  0% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -60%; }
+
+  70% {
+    width: 55%;
+    height: 47%;
+    background-size: 25% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -63%; }
+
+  80% {
+    width: 47%;
+    height: 51%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -57.5%; }
+
+  85% {
+    width: 52%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -62%; }
+
+  95% {
+    width: 49%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -59.4%; }
+
+  100% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -60%; } }
+@-webkit-keyframes extrusion-men {
+  0% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -60%; }
+
+  70% {
+    width: 55%;
+    height: 47%;
+    background-size: 25% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -63%; }
+
+  80% {
+    width: 47%;
+    height: 51%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -57.5%; }
+
+  85% {
+    width: 52%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -62%; }
+
+  95% {
+    width: 49%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -59.4%; }
+
+  100% {
+    width: 50%;
+    height: 50%;
+    background-size: 20% 10%;
+    top: 45%;
+    right: 50%;
+    margin-top: -50%;
+    margin-right: -60%; } }
+@-webkit-keyframes opacityIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes opacityIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes scaleZ {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  90% {
+    -webkit-transform: scale3d(2.3, 2.3, 2.3);
+    transform: scale3d(2.3, 2.3, 2.3); }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes scaleZ {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  90% {
+    -webkit-transform: scale3d(2.3, 2.3, 2.3);
+    transform: scale3d(2.3, 2.3, 2.3); }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes scaleZ2 {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  90% {
+    -webkit-transform: scale3d(2.8, 2.8, 2.8);
+    transform: scale3d(2.8, 2.8, 2.8); }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes scaleZ2 {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  90% {
+    -webkit-transform: scale3d(2.8, 2.8, 2.8);
+    transform: scale3d(2.8, 2.8, 2.8); }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }

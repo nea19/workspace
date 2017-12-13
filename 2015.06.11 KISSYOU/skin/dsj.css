@@ -1,0 +1,316 @@
+html, body {
+  position: relative;
+  height: 100%; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+.section {
+  z-index: 10;
+  position: relative;
+  overflow: hidden; }
+
+.section .up {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  width: 28px;
+  height: 15px;
+  margin-left: -14px;
+  background: url(i/up.png) no-repeat;
+  background-size: 28px 15px;
+  animation-name: up;
+  -webkit-animation-name: up;
+  animation-duration: .9s;
+  -webkit-animation-duration: .9s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; }
+
+@keyframes up {
+  0% {
+    transform: translateY(0%); }
+
+  50% {
+    transform: translateY(50%); }
+
+  100% {
+    transform: translateY(0%); } }
+@-webkit-keyframes up {
+  0% {
+    -webkit-transform: translateY(0%); }
+
+  50% {
+    -webkit-transform: translateY(50%); }
+
+  100% {
+    -webkit-transform: translateY(0%); } }
+.fore2 {
+  display: block;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: all ease-in 3s;
+  -moz-transition: all ease-in 3s;
+  -ms-transition: all ease-in 3s;
+  -o-transition: all ease-in 3s;
+  transition: all ease-in 3s; }
+  .fore2 .kiss-1, .fore2 .kiss-2, .fore2 .kiss-3, .fore2 .kiss-4, .fore2 .kiss-blue {
+    position: fixed;
+    -webkit-transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -ms-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+    transition: all ease-in 0.5s; }
+  .fore2 .kiss-1 {
+    width: 76px;
+    height: 63px;
+    background: url(i/kiss-1.png) no-repeat;
+    background-size: 76px 63px; }
+  .fore2 .kiss-2 {
+    width: 183px;
+    height: 141px;
+    background: url(i/kiss-2.png) no-repeat;
+    background-size: 183px 141px; }
+  .fore2 .kiss-3 {
+    width: 191px;
+    height: 116px;
+    background: url(i/kiss-3.png) no-repeat;
+    background-size: 191px 116px; }
+  .fore2 .kiss-4 {
+    width: 126px;
+    height: 75px;
+    background: url(i/kiss-4.png) no-repeat;
+    background-size: 126px 75px; }
+  .fore2 .kiss-text {
+    width: 84.6875%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 26%;
+    margin-left: -42.34375%;
+    z-index: 3;
+    opacity: 0; }
+    .fore2 .kiss-text img {
+      display: block;
+      width: 100%;
+      height: auto;
+      -webkit-transition: all ease-in 2s;
+      -moz-transition: all ease-in 2s;
+      -ms-transition: all ease-in 2s;
+      -o-transition: all ease-in 2s;
+      transition: all ease-in 2s; }
+  .fore2 .kiss-blue {
+    width: 70.3%;
+    position: absolute;
+    left: 50%;
+    top: 19.5%;
+    margin-left: -35.15%;
+    opacity: 0; }
+    .fore2 .kiss-blue img {
+      display: block;
+      width: 100%;
+      height: auto; }
+  .fore2 .it-text {
+    visibility: hidden;
+    width: 64%;
+    position: absolute;
+    left: 51%;
+    top: 45%;
+    margin-left: -32%;
+    background-size: 100% 100%;
+    /* .it-text-shadow{
+    	position: absolute;
+    	left: 0;
+    	top:0;
+    	width: 100%;
+    	height: 100%;
+    	background: url(i/it-text-shadow.png) no-repeat;
+    	background-size: 100% 100%;
+    	opacity: 0;
+    } */ }
+    .fore2 .it-text img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto; }
+  .fore2 .tap-tip {
+    position: fixed;
+    width: 26.25%;
+    left: 50%;
+    top: 50%;
+    z-index: 10; }
+    .fore2 .tap-tip img {
+      width: 100%;
+      height: auto;
+      animation-name: pulse;
+      -webkit-animation-name: pulse;
+      animation-duration: 1.5s;
+      -webkit-animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite; }
+  .fore2 .flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes flash {
+  0%,28%,56% ,84% {
+    opacity: 1; }
+
+  14% ,42%,70% {
+    opacity: 0.2; } }
+@keyframes flash {
+  0%,28%,56% ,84% {
+    opacity: 1; }
+
+  14% ,42%,70% {
+    opacity: 0.2; } }
+/*
+==============================================
+pulse
+==============================================
+*/
+.kiss-pulse {
+  position: absolute;
+  width: 75px;
+  height: 65px;
+  right: 0;
+  bottom: -90px;
+  background: url(i/kiss.png) no-repeat;
+  background-size: 75px 65px;
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; }
+
+.tap-tip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  background: url(i/kiss.png) no-repeat;
+  background-size: 45px 40px;
+  right: 38px;
+  top: -162px;
+  bottom: auto;
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; }
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.3; }
+
+  50% {
+    transform: scale(1);
+    opacity: 1; }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.3; } }
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+    opacity: 0.3; }
+
+  50% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: scale(0.95);
+    opacity: 0.3; } }
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 0.2; }
+
+  50% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+    opacity: 1; }
+
+  65% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8); }
+
+  80% {
+    -webkit-transform: scale3d(3, 3, 3);
+    transform: scale3d(3, 3, 3); }
+
+  90% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8); }
+
+  95% {
+    -webkit-transform: scale3d(3, 3, 3);
+    transform: scale3d(3, 3, 3); }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 1; } }
+/*@keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+*/
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
