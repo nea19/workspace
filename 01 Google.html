@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>谷歌测速</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type="text/css">
+
+    </style>
+</head>
+<body>
+    <!--<img src="data:image/jpg;base64,_9j_4AAQSkZJRgABAQAAAQABAAD_2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj_2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj_wAARCADwAUADASIAAhEBAxEB_8QAHAABAAICAwEAAAAAAAAAAAAAAAQFAgMBBgcI_8QATBAAAQMCBAEHCQYDAwoHAQAAAQACAwQRBRIhMRMGIkFRYXGRFBUWMlNVgZPRI0JSkqGxBzPBQ3LhJCY0NlRigpSz8BdERXN0stLx_8QAGgEBAQEBAQEBAAAAAAAAAAAAAAECAwQFBv_EADIRAAIBAgMHBAEDBAMBAAAAAAABAgMRE6HRBBIVFiExUgVBUWFTcZHhBjJCgRQiQ_D_2gAMAwEAAhEDEQA_APp6SZsb2Mde7zYWCzc7K0k7AXUWulkjfDw9SSdOtcOrCWERxSZ7dI2W91tJo576TaZJglbNGHtvY9a2KJSPfJTxkuNze5stl5AG3J1AJNtlGuppS6G9FHzPsfW25vN371ld9nanN1W0UsN43IouabK02Nz2KQ25aL72RqxU7mSIihQiIgCIiAIiIAiIgCIiAIiIDhLoVg8vDhkGnSgM7pdabzZdhe_6LJhfmOYadCA2XS61F0mY2GnQs7vybc6yAyul1raX82479Fk4u0yjvQGV0usWFxvmFlw42J1I6kBndcrELJAERcFAcotDuLzrX7FsjzZBn9ZWxEzNFpfxOK3L6nSuYQ8X4nXolhcxmh4ksT81uGb2tutrhdpHWqN88oI"/>-->
+    <img id="image"/>
+</body>
+<script>
+
+
+    $.ajax({
+            url: 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed',
+            type: 'get',
+            contentType: 'application/json',
+            data: {
+                'url': 'http://mooc.guokr.com',
+                'screenshot':true
+            },
+            success: function(d) {
+                console.log(d)
+//                var shot = d.screenshot;
+//                $('#image').attr('src','data:'+shot.mime_type+';base64,'+shot.data);
+            },
+            error: function(a,b,c){
+                console.log(a)
+            },
+            dataType: 'json'
+    });
+
+    $.ajax({
+        url: 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed',
+        type: 'get',
+        contentType: 'application/json',
+        data: {
+            'url': 'http://www.baidu.com'
+        },
+        success: function(d) {
+            console.log(d)
+        },
+        error: function(a,b,c){
+            console.log(a)
+        },
+        dataType: 'json'
+    });
+
+</script>
+</html>

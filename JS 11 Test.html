@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    function toChineseNum(num) {
+      if(typeof num != 'number') return false;
+      var number = [0,1,2,3,4,5,6,7,8,9];
+      var chinese = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+      var danwei = ['','十','百','千'];
+
+      var a1 = Math.floor(num/10000);
+      var a2 = num-a1*10000;
+
+      var result = '';
+
+      if(part(a1)!=''){
+        result += part(a1) + '万';
+      }
+
+      result +=part(a2);
+
+      if((result.slice(-1)=='零')) {
+            result = result.substring(0,result.length-1);
+        }
+      return result;
+
+
+                    function part(nu) {
+                        var result2 = '';
+                        var arr = (nu+'').split('');
+
+                        for(var i=0;i<arr.length;i++) {
+
+                            if(arr[i]==0) {
+
+                                if(      (i==arr.length) || (result.slice(-1)=='零')         ) {
+                                    result2 +=''
+                                } else {
+                                    result2 +='零';
+                                }
+                                
+                             } else {
+                                // console.log(     chinese[arr[i]] + danwei[arr.length-1-i]    );
+                                result2+=(     chinese[arr[i]] + danwei[arr.length-1-i]    );
+
+
+                            }
+                        }                        
+
+                        console.log(result2);
+                        return result2;
+                    }
+    }
+      
+
+    document.write(toChineseNum(10000001));
+
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+	* {
+		margin: 0;
+	}
+	div{
+		height: 100px;
+		width:100px;
+	}
+	.a {
+		background: #ffc;
+	}
+	.b {
+		background: #ccf;
+	}
+	#d3 {
+		width: 200px;
+		height: 200px;
+	}
+	
+	/* 第一种 */
+	#d1 {
+		margin-bottom: 100px;
+	}
+
+	#d2 {
+		margin-top: 100px; 
+	}
+
+	/* 第二种 */
+	#d4 {
+		margin-top: 10px;
+	}
+	
+	/* 解决外边距塌陷 */
+	#d3 {
+		overflow: hidden;
+	}
+</style>
+</head>
+<body>
+  		<div class="a" id='d1'></div>
+  		<div class="b" id='d2'></div>
+
+
+		<div class="a" id='d3'>
+  			<div class="b" id='d4'></div>
+		</div>
+</body>
+<script>
+</script>
+</html>

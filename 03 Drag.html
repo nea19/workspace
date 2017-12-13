@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>拖动</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+	div {
+		height:200px;width:200px;
+		float:left;
+		margin:10px;padding:10px;
+		border:1px solid #aaaaaa;
+	}
+	img {
+		width:200px;
+		cursor: all-scroll;
+	}
+</style>
+</head>
+<body>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+	<img id="drag1" src="http://ww2.sinaimg.cn/mw690/76a1b64dgw1f2x4qhj55hj20ri0hftbk.jpg" draggable="true" ondragstart="drag(event)" />
+</body>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</html>

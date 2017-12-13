@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        例一 人
+    */
+    // function People(name) {
+    //     this.name = name;
+    //     //对象方法
+    //     this.Introduce = function() {
+    //         document.write("对象方法我是" + this.name + "。");
+    //     }
+    // }
+    // //类方法
+    // People.Run = function() {
+    //     document.write("类方法。");
+    // }
+    // //原型方法
+    // People.prototype.IntroduceChinese = function() {
+    //     document.write("原型方法我是" + this.name + "。");
+    // }
+
+    // //测试
+
+    // var p1 = new People("小名");
+
+    // p1.Introduce();
+
+    // People.Run();
+
+    // p1.IntroduceChinese();
+
+
+    /*
+        例二 动物
+    */
+    //定义一个动物类：Animal
+    function Animal (name) {
+        this.name = name || '某动物';
+        // 实例方法(对象方法)
+        this.sleep = function(){
+            console.log(this.name + '正在睡觉！');
+        }
+    }
+    // 原型方法
+    Animal.prototype.eat = function(food) {
+        console.log(this.name + '正在吃' + (food || '食物'));
+    };
+    // 类方法
+    Animal.run = function() {
+        console.log('跑啊啊啊啊啊啊');
+    }
+
+    // 创建一个实例对象：鸟
+    var bird = new Animal('鸟');
+
+
+
+    /*
+        例三 原型链继承
+    */
+
+    // function Cat() {};
+    // Cat.prototype = new Animal();
+    // Cat.prototype.name = '猫';
+
+
+    /*
+        例四 构造继承
+    */
+    function Cat() {
+        Animal.call(this);
+        this.name = name || '猫';
+    };
+
+
+    var cat = new Cat();
+    console.log(cat.name);
+    console.log(cat instanceof Animal);
+    console.log(cat instanceof Cat);
+    cat.sleep();
+    cat.eat();
+
+</script>
+</html>

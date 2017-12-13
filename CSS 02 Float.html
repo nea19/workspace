@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+	* {
+		margin:0;padding:0;
+		color: #7a023c;
+	}
+	/*body>div {
+		width: 600px;
+		margin: 0px auto 100px;
+		background: #ebede4;
+		border: 2px solid #ff5983;
+	}
+	body>div>div {
+		width:100px;
+		height:100px;
+		background: #aaa8a3;
+		border: 2px solid #c1194e;
+	}
+
+	#b1,#b2 {float: left;}
+	#b3 {float: right;}
+
+	#c1,#c2 {float:left;}
+	#c3 {float:right;}
+	#c div {clear:both;}
+
+
+	#d1,#d2 {float:left;}
+	#d3,#d4 {float:right;}
+	#d div {clear:both;}*/
+	.box {
+		border:1px solid red;
+		/*overflow: hidden;*/
+	}
+	.box div {
+		width: 100px;
+		height: 100px;
+		background: yellow;
+		float: left;
+	}
+	.box:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+</style>
+</head>
+<body>
+	<!-- <div id="a">
+		<div id="a1">1</div>
+		所有的教科书教程上都喜欢用最后一段来说明闭包，aaa。这里面返回的是函数名，没看过谭浩强C/C++程序设计的同学可能一下子没反应出带不带()的区别，也就是说这种写法自带一个陷阱。虽然这种写法更显高大上，但我还是喜欢将问题单一化，看看代码 1 和代码 2，你还会纠结函数的调用，你会纠结 n 的值吗？
+		<div id="a2">1</div>
+	</div>
+	<div id="b">
+		<div id="b1">1</div>
+		<div id="b2">2</div>
+		<div id="b3">3</div>
+		所有的教科书教程上都喜欢用最后一段来说明闭包，但我觉得这将问题复杂化了。这里面返回的是函数名，没看过谭浩强C/C++程序设计的同学可能一下子没反应出带不带()的区别，也就是说这种写法自带一个陷阱。虽然这种写法更显高大上，但我还是喜欢将问题单一化，看看代码 1 和代码 2，你还会纠结函数的调用，你会纠结 n 的值吗？
+	</div>
+	<div id="c">
+		所有的教科书教程上都喜欢用最后一段来说明闭包，但我觉得这将问题复杂化了。这里面返回的是函数名，没看过谭浩强C/C++程序设计的同学可能一下子没反应出带不带()的区别，也就是说这种写法自带一个陷阱。虽然这种写法更显高大上，但我还是喜欢将问题单一化，看看代码 1 和代码 2，你还会纠结函数的调用，你会纠结 n 的值吗？
+		<div id="c1">1</div>
+		<div id="c2">2</div>
+		<div id="c3">3</div>
+	</div>
+	<div id="d">
+		<div id="d1">111</div>
+		所有的教科书教程上都喜欢用最后一段来说明闭包，但我觉得这将问题复杂化了。
+		<div id="d2">222</div>
+		这里面返回的是函数名，没看过谭浩强C/C++程序设计的同学可能一下子没反应出带不带()的区别，也就是说这种写法自带一个陷阱。
+		<div id="d3">333</div>
+		虽然这种写法更显高大上，但我还是喜欢将问题单一化，看看代码 1 和代码 2，你还会纠结函数的调用，你会纠结 n 的值吗？
+		<div id="d4">444</div>
+	</div> -->
+
+	<div class="box">
+		<div class="d1"></div>
+		<div class="d2"></div>
+		<div class="d3"></div>
+	</div>
+
+</body>
+</html>

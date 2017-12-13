@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+	@-webkit-keyframes line-scale {
+  	0% {
+	    -webkit-transform: scaleX(1);
+	            transform: scaleX(1); }
+
+	  50% {
+	    -webkit-transform: scaleX(0.1);
+	            transform: scaleX(0.1); }
+
+	  100% {
+	    -webkit-transform: scaleX(1);
+	            transform: scaleX(1); } }
+
+	.waiting {
+		position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+	  	animation: line-scale 1s 0.1s infinite cubic-bezier(.2, .68, .18, 1.08); 
+	  	background:red;
+	}
+
+
+</style>
+</head>
+<body>
+  		<div class='waiting'></div>
+
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    // // 字符串 数字 布尔 
+    // // 原始类型
+    // var a = 1;
+    // var b = a;
+
+    // a = 2;
+    // console.log(a,b);
+
+
+
+
+
+    // // 对象 数组 函数
+    // // 合成类型
+    // var a = {
+    //     'x':'操',
+    //     'y':'你妈'
+    // }
+    // var b = a;
+    // a.y = '死你妈';
+    // // b.y = '我他妈草死你妈';
+
+    // console.log(a,b);
+
+    // // 两种结果都是一样的 a和b同时被修改了
+
+
+
+
+    // // 克隆对象
+    // var a = {
+    //     'x':'操',
+    //     'y':'你妈'
+    // }
+    // var b = {};
+    // for(i in a) {
+    //     b[i]=a[i];
+    // }
+
+    // a.y = '死你妈';
+
+    // console.log(a,b);
+
+
+    
+    // 克隆数组
+    var a = [1,2,3]
+    
+    // var b = a;
+
+    // var b = [];
+    // for(var i = 0;i<a.length;i++){
+    //     b[i]=a[i];
+    // }
+
+    var b = a.slice();
+
+    a.push('死你妈');
+
+    console.log(a,b);
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+//    var a = 1;
+//    console.log(this.a);
+//
+//    (function () {
+//        console.log(this.a);
+//    })()
+
+    var arr = [1,2,3,[4,5],[67,'我是一个,逗号',8,[9,',,,,,',10,11,'哈哈哈']],[12,13],145,567,1000];
+    console.log(arr);
+
+    var real_arr = [];
+    function formatArray(arr) {
+        for(var i=0;i<arr.length;i++){
+            if (Array.isArray(arr[i])) {
+                formatArray(arr[i]);
+            } else {
+                real_arr.push(arr[i]);
+            }
+        }
+    }
+    formatArray(arr);
+    console.log(real_arr);
+
+    var fake_arr = arr.join().split(',');
+    console.log(fake_arr);
+
+</script>
+</html>

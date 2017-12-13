@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+	body{
+		MARGIN:0;PADDING:0;
+	}
+	#div1{
+		height:300px;width:300px;background-color:#CCFFFF;
+	}
+	#div2{
+		height:100px;width:100px;background-color:#FFFFCC;position:absolute;top:100px;left:100px;
+	}
+
+	#div3{
+		height:100px;width:100px;background-color:#FFCCCC;
+	}
+
+	/*4是一个遮罩*/
+	#div4{
+		height:300px;width:300px;
+		position:absolute;top:0;left:0;
+	}
+</style>
+</head>
+<body>
+	<div id="div1">1111</div>
+
+	<div id="div2">2222</div>
+
+	<div id="div3">3333</div>
+	<div id="div4">4444</div>
+</body>
+<script>
+    var $play = $('#div3');
+
+    $('#div4').on({
+        mouseenter:function(){
+            $play.animate({
+                marginLeft:"100px"
+            },200);
+        },
+        mouseleave:function(){
+            $play.animate({
+                marginLeft:"0px"
+            },200,function(){
+                $play.stop(true);
+            });
+
+        }
+    });
+</script>
+</html>

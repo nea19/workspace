@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    var a = 1
+    function f1() {
+        var a = 2
+        function f2() {
+            // var a = 3
+            function f3() {
+                console.log(a);
+            }
+            f3();
+        }
+        f2();
+    }
+    f1();
+
+</script>
+</html>

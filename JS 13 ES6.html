@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    // 变量
+    let a = 1;
+    console.log(1);
+
+
+
+
+    // 类
+    class Animal {
+        constructor(name) {
+            this.name = name || '未知动物';
+        }
+        eat(food) {
+            console.log(this.name+'吃'+food||'未知食物');
+        }
+    }
+    let bird = new Animal('鸟');
+    bird.eat('虫子');
+
+
+
+
+    // 继承
+    class Cat extends Animal {
+        miao() {
+            console.log('喵喵喵');
+        }
+    }
+    let cat = new Cat('猫');
+    cat.eat('鱼');
+    cat.miao();
+
+</script>
+</html>
