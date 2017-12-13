@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+<style type="text/css">
+	#container{
+			width: 1000px;
+			height: 550px;
+			margin: 0 auto;
+		}
+		#ground{
+			width: 1000px;
+			height: 500px;
+			background: gray;
+			position: relative;
+		}
+		
+		#button div {
+			color: white;
+			line-height: 30px;
+			margin:10px;
+			width: 100px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		#start {background: green;}
+		#pause {background: red;}
+
+		.block{
+			width: 20px;
+			height: 20px;
+			float: left;
+			background: #FFFFCC;
+		}
+		.snakeBody{
+			width: 20px;
+			height: 20px;
+			background: #996699;
+			position: absolute;
+			top: 60px;
+		}
+		.snake-block{
+			background: #996699;
+			position: absolute;
+		}
+		.food-block{
+			background: #99CCCC;
+			position: absolute;
+		}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="ground"></div>
+		<div id="button">
+				<div id="start">开始</div>
+				<div id="pause">暂停</div>
+		</div>
+	</div>
+</body>
+<script>
+    //创建草坪
+    var oGround = document.getElementById("ground");
+    for (var i = 0; i<50 ; i++) {
+        for(var j = 0; j<25 ;j++){
+            var oDiv = document.createElement("div");
+            oDiv.className = "block";
+            oGround.appendChild(oDiv);
+        }
+    };
+    //创建蛇
+    var snakeBody = new Array();//蛇身数组
+    for(var i = 3;i>0;i--){
+        var oDiv = document.createElement("div");
+        oDiv.className = "block snakeBody";
+        oDiv.style.left= i*20 + "px";
+        oGround.appendChild(oDiv);
+        snakeBody.push(oDiv);//向蛇身数组添加蛇身
+    }
+
+
+    //创建食物
+    var food = createFood();
+    //蛇移动
+    var direction = 'right';
+    var oBtnStart = document.getElementById("start");
+    var timer = null;
+    oBtnStart.onclick = function() {
+        clearInterval(timer);
+        timer = setInterval(function(){
+            // for(var i=0; i<snakeBody.length;i++){
+            // 	snakeBody[i].style.left=snakeBody[i].offsetLeft + 20 + "px";
+            // }
+            move(direction);
+        },300);
+
+    }
+    //蛇转向
+    document.onkeydown = function(e){
+        e = e || window.event;
+        var keyCode = e.which || e.keyCode;
+        if(keyCode == 37 ){//左
+            if(direction != 'right'){
+                direction = 'left';
+                move(direction);
+            }
+        }else if(keyCode == 38){//上
+            if(direction != 'down'){
+                direction = 'up';
+                move(direction);
+            }
+        }else if(keyCode == 39){//右
+            if(direction != 'left'){
+                direction = 'right';
+                move(direction);
+            }
+        }else if(keyCode == 40){//下
+            if(direction != 'up'){
+                direction = 'down';
+                move(direction);
+            }
+        }
+    };
+    //蛇暂停
+    var oPause = document.getElementById("pause");
+    oPause.onclick = function(){
+        clearInterval(timer);
+    }
+    //蛇移动的方法
+    function move(dir) {
+        var snakeHead = snakeBody[0];//取出蛇头
+        for(var i=snakeBody.length-1; i>0; i--){
+            snakeBody[i].style.left = snakeBody[i-1].offsetLeft + "px";
+            snakeBody[i].style.top = snakeBody[i-1].offsetTop + "px";
+        }
+        switch(dir){
+            case "left":
+                snakeHead.style.left = snakeHead.offsetLeft - 20 + "px";
+                break;
+            case "up":
+                snakeHead.style.top = snakeHead.offsetTop - 20 + "px";
+                break;
+            case "right":
+                snakeHead.style.left = snakeHead.offsetLeft + 20 + "px";
+                break;
+            case "down":
+                snakeHead.style.top = snakeHead.offsetTop + 20 + "px";
+                break;
+
+        }
+        //蛇是否吃到身体/墙
+        if(snakeHead.offsetLeft == -20 || snakeHead.offsetTop == -20 || snakeHead.offsetLeft == 1000 || snakeHead.offsetTop == 500)
+        {
+            alert("Game over");
+            clearInterval(timer);
+            location.reload(); // 页面刷新
+        }
+        //蛇吃身体
+        for(var i=1; i<snakeBody.length; i++){
+            if(snakeHead.offsetLeft == snakeBody[i].offsetLeft && snakeHead.offsetTop == snakeBody[i].offsetTop){
+                alert('Game over');
+                clearInterval(timer);
+            }
+        }
+        //蛇吃食物
+        if(snakeHead.offsetLeft == food.offsetLeft && snakeHead.offsetTop == food.offsetTop){
+            food.className = "block snake-block";
+            if("direction" == "right"){
+                food.style.left = snakeBody[snakeBody.length - 1].offsetLeft - 20 + "px";
+            }else	if("direction" == "down"){
+                food.style.top = snakeBody[snakeBody.length - 1].offsetTop - 20 + "px";
+            }else	if("direction" == "left"){
+                food.style.left = snakeBody[snakeBody.length - 1].offsetLeft + 20 + "px";
+            }else	if("direction" == "up"){
+                food.style.top = snakeBody[snakeBody.length - 1].offsetTop + 20 + "px";
+            }
+            snakeBody.push(food);//蛇吃到食物
+            food = createFood();//重新生成食物
+        }
+    }
+    //生成食物
+    function createFood(){
+        var oFood = document.createElement("div");
+        oFood.className = "block food-block";
+        var iLeft = iTop = 0;
+        do{
+            var bFound = true;//一个标识，表示是否找到食物合适的位置
+            iLeft = Math.floor(Math.random() * 1000);
+            iLeft = iLeft - iLeft%20 ;//随机产生食物的位置
+            iTop = Math.floor(Math.random() * 500);
+            iTop = iTop - iTop%20;
+            for(var i=0;i<snakeBody.length;i++){
+                if(snakeBody[i].offsetLeft == iLeft && snakeBody[i].offsetTop == iTop){
+                    bFound = false;//表示食物与蛇身重合
+                    break;
+                }
+            }
+            oFood.style.left = iLeft + "px";
+            oFood.style.top = iTop + "px";
+            oGround.appendChild(oFood);
+        }while(!bFound);
+        return oFood;
+    }
+</script>
+</html>

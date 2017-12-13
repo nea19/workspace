@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{font-family:"微软雅黑";margin:0;padding:0;list-style-type:none;}
+        /*nav*/
+        #nav{
+            height:32px;text-align:center;
+        }
+        #nav .mainlevel{
+            background:#cccc33;float:left;border-right:1px solid #fff;width:140px;
+        }
+        #nav .mainlevel a{
+            color:white;text-decoration:none;line-height:32px;display:block;padding:0 20px;width:100px;
+        }
+        #nav .mainlevel a:hover,#nav .mainlevel a.cur{
+            color:white;;text-decoration:none;background:#666600;
+        }
+        #nav .mainlevel ul{
+            display:none;position:absolute;
+        }
+        #nav .mainlevel li{
+            border-top:1px solid #fff;color:white;background:#666600;width:140px;
+        }
+    </style>
+</head>
+<body>
+<ul id="nav">
+    <li class="mainlevel">
+        <a href="#">点我</a>
+        <ul>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">slideUp</a></li>
+            <li><a href="#">slideDown</a></li>
+            <li><a href="#">up and down</a></li>
+            <li><a href="#">animate</a></li>
+        </ul>
+    </li>
+    <li class="mainlevel">
+        <a href="#">再点我</a>
+        <ul>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">slideUp</a></li>
+            <li><a href="#">slideDown</a></li>
+            <li><a href="#">up and down</a></li>
+            <li><a href="#">animate</a></li>
+        </ul>
+    </li>
+    <li class="mainlevel">
+        <a href="#">再再点我</a>
+        <ul>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">slideUp</a></li>
+            <li><a href="#">slideDown</a></li>
+            <li><a href="#">up and down</a></li>
+            <li><a href="#">animate</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#nav li").hover(function(){
+            $(this).find("ul").slideDown("fast");
+        },function(){
+            $(this).find("ul").slideUp("fast").hide();
+        });
+    });
+</script>
+</html>
