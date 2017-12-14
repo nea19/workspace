@@ -36,12 +36,27 @@
 
 
 
-
-    // 9会报错
-    setTimeout(f9(),3000);
+    // 5去哪儿了
+    setTimeout('f5',3000);
+    function f5() {
+        console.log(5)
+    }
+    // 9去哪儿了
+    setTimeout(f9,3000);
     var f9 = function () {
         console.log(9)
     }
+
+    // 10会报错
+    setTimeout(f10(),3000);
+    var f10 = function () {
+        console.log(10)
+    }
+
+    setTimeout(function(){
+        alert('312312');
+        this.name='1';
+    })
 
 </script>
 </html>
