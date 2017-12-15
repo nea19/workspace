@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    类
+    */
+    //定义一个动物类：Animal
+    function Animal (name) {
+        this.name = name || '动物';
+        // 实例方法(对象方法)
+        this.sleep = function(){
+            console.log(this.name + '正在睡觉');
+        }
+    }
+    // 原型方法
+    Animal.prototype.eat = function(food) {
+        console.log(this.name + '吃' + (food || '食物'));
+    };
+
+    var animal = new Animal();
+    animal.sleep();
+    animal.eat();
+
+    /*
+    原型链继承
+    特点：
+    1.非常纯粹的继承关系，实例是子类的实例，也是父类的实例
+    2.父类新增原型方法/原型属性，子类都能访问到
+    3.简单，易于实现
+    缺点：
+    1.要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中
+    2.无法实现多继承
+    3.来自原型对象的引用属性是所有实例共享的（详细请看附录代码： 示例1）
+    4.创建子类实例时，无法向父类构造函数传参
+    推荐指数：★★（3、4两大致命缺陷）
+    */
+    function Dog() {};
+    Dog.prototype = new Animal();
+    Dog.prototype.name = '狗';
+
+    var dog = new Dog();
+    console.log(dog.name);
+    console.log(dog instanceof Animal); //true 
+    console.log(dog instanceof Dog); //true
+    dog.sleep();
+    dog.eat('骨头');    
+
+
+    /*
+    构造继承
+    特点：
+    1.解决了1中，子类实例共享父类引用属性的问题
+    2.创建子类实例时，可以向父类传递参数
+    3.可以实现多继承（call多个父类对象）
+    缺点：
+    1.实例并不是父类的实例，只是子类的实例
+    2.只能继承父类的实例属性和方法，不能继承原型属性/方法
+    3.无法实现函数复用，每个子类都有父类实例函数的副本，影响性能
+    推荐指数：★★（缺点3）
+    */
+    function Cat() {
+        Animal.call(this);
+        this.name = name || '猫';
+    };
+
+    var cat = new Cat();
+    console.log(cat.name);
+    console.log(cat instanceof Animal);// false
+    console.log(cat instanceof Cat);
+    cat.sleep();
+    // cat.eat('鱼');// 报错啦！！！！！！！！！
+
+
+    /*
+    组合继承
+    核心：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用
+    特点：
+
+    弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法
+    既是子类的实例，也是父类的实例
+    不存在引用属性共享问题
+    可传参
+    函数可复用
+    缺点：
+
+    调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）
+    推荐指数：★★★★（仅仅多消耗了一点内存）
+    */
+    function Mouse(name){
+        Animal.call(this);
+        this.name = name || '老鼠';
+    }
+    Mouse.prototype = new Animal();
+
+    // 感谢 @学无止境c 的提醒，组合继承也是需要修复构造函数指向的。
+    // Mouse.prototype.constructor = Mouse;
+
+    // Test Code
+    var micky = new Mouse();
+    console.log(micky.name);
+    micky.sleep();
+    micky.eat('奶酪');    
+    console.log(micky instanceof Animal); // true
+    console.log(micky instanceof Mouse); // true
+
+
+</script>
+</html>

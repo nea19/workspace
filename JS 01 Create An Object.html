@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+</body>
+<script>
+
+    /*
+    JSON
+    */
+    var person ={
+        name:"小名",
+        age:20,
+    };
+    console.log(person.name);
+    console.log('————————————————————');
+
+
+    /*
+    new Object()构造函数
+    */
+    var person0 = new Object();
+    person0.name="小名0";
+    person0.age=20;
+    console.log(person0.name);
+    console.log(person0["name"]);
+    console.log('————————————————————');
+
+
+
+
+
+    /*
+    1. 工厂模式
+    工厂模式没有解决对象识别的问题
+    */
+    function Person1(name, age){
+        var o = new Object();
+        o.name=name;
+        o.age=31;
+        o.sayName=function(){
+            console.log('你好，我叫'+this.name);
+        };
+        return o;
+    }
+
+    var person1 = Person1("小名1",20);
+    person1.sayName();
+
+    // 问题
+    console.log(person1 instanceof Person1); // false
+    console.log('————————————————————');
+
+
+    /*
+    2. 构造函数模式
+    没有return
+    没有显式创建对象
+    直接将属性和方法赋给了this对象
+    构造函数最好大写开头（借鉴自其它语言）
+    创建实例必须借助new
+
+    new主要进行了4个步骤：
+        创建一个新对象
+        将构造函数的作用域赋给新对象（因此this就指向了这个新对象）
+        执行构造函数中的代码
+        返回新对象
+
+    问题
+        创建多个对象 每个方法都要在实例上重写一遍（sayName）
+    */
+    function Person2(name,age){
+        this.name=name;
+        this.age=age;
+        this.sayName=function(){
+            console.log('你好，我叫'+this.name);
+        };
+    }
+
+    var person2 = new Person2("小名2",20);
+    person2.sayName();
+
+    // 测试四连
+    console.log(person2 instanceof Person2);// true
+    console.log(person2.constructor===Person2);// true
+    console.log(Person2.prototype.isPrototypeOf(person2));// true;
+    console.log(Person2.prototype===person2.__proto__);// true;
+
+    // 错误的使用方法
+    var person2a = Person2("小名2a",20);
+    person2a;    // undefined
+    // person2a.sayName(); // 报错
+    console.log('————————————————————');
+
+
+    /*
+    3. 原型模式
+    */
+    function Person3() {
+    }
+    Person3.prototype.name='小名3';
+    Person3.prototype.age=20;
+    Person3.prototype.sayName = function() {
+        console.log('我叫'+this.name);
+    }
+    var person3 = new Person3();
+    person3.sayName();
+    console.log('————————————————————');
+
+
+
+    /*
+    4. 原型模式简写和改进
+    prototype必须加上constructor
+    否则生成的实例的constructor等于Object
+    */
+    function Person4() {
+    }
+    Person4.prototype={
+        name:'小名4',
+        age:20,
+        sayName : function() {
+            console.log('我叫'+this.name);
+        }
+    }
+    var person4 = new Person4();
+
+    // 测试四连
+    console.log(person4 instanceof Person4);// true
+    console.log(person4.constructor===Person4);// falsefalsefalsefalsefalsefalsefalsefalse!!!!!!!!!
+    console.log(Person4.prototype.isPrototypeOf(person4));// true;
+    console.log(Person4.prototype===person4.__proto__);// true;
+
+    console.log('————————————————————');
+
+    function Person5() {
+    }
+    Person5.prototype={
+        constructor:Person5,
+        name:'小名5',
+        age:20,
+        sayName : function() {
+            console.log('我叫'+this.name);
+        }
+    }
+    var person5 = new Person5();
+    console.log(person5.constructor===Person5);// true
+
+
+</script>
+</html>

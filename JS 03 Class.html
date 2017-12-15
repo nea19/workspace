@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+</body>
+<script>
+
+    function People(name) {
+        this.name = name;
+        //对象方法
+        this.Introduce = function() {
+            console.log("I am" + this.name + "。");
+        }
+    }
+    //原型方法
+    People.prototype.IntroduceChinese = function() {
+        console.log("我是" + this.name + "。");
+    }
+    //类方法
+    People.Run = function() {
+        console.log("类方法不能被实例调用 只能这样用 为什么要存在。");
+    }
+
+    //测试
+    var p1 = new People("小名");
+
+    p1.Introduce();
+
+    p1.IntroduceChinese();
+
+    People.Run();
+
+    // p1.Run(); // 报错
+
+</script>
+</html>

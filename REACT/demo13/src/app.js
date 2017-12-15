@@ -11,11 +11,6 @@ export default class App extends React.Component{
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      disabled: false
-    })
-  }
 
   handleClick() {
     this.setState({
@@ -26,7 +21,7 @@ export default class App extends React.Component{
   render() {
     return (
       <div>
-        <button onClick={this.handleClick.bind(this)} disabled={this.state.disabled}>Add Item</button>
+        <button onClick={this.handleClick.bind(this)}>Add Item</button>
         <ul>
         {
           this.state.items.map(function(item) {
