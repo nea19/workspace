@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+    * {
+        margin:0;padding:0;
+    }
+    .father {
+        height:100px;
+        border:1px solid #fcc;
+        font-size:12px;
+        position: relative;
+    }
+
+
+    .father-inline-1 {
+        text-align: center;
+    }
+
+    .father-inline-2 {
+        height: 100px;
+        line-height: 100px;
+    }
+    
+    .block-1 {
+        height:50px;
+        width:100px;
+        background: #fcc;
+        
+        margin:0 auto;
+    }
+
+
+
+    .son-float-1{  
+        float:left;   
+        position:relative;   
+        left:50%;   
+    }   
+    .float-1{    
+        float:left;   
+        position:relative;   
+        right:50%;  
+        background: #fcc; 
+    } 
+
+
+    .float-2 {
+        background-color:#fcc; /*方便看效果 */    
+        width:100px ;   
+        height:50px; /*高度可以不设*/  
+        margin: -25px 0 0 -50px; /*使用marin向左移动250px，保证元素居中*/  
+        position:relative;   /*相对定位*/  
+        left:50%;  
+        top:50%;  
+    }
+
+
+
+
+
+    .block-2{  
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width:100px;
+        height:50px;
+        margin-left:-50px;
+        margin-top:-25px;
+        background: #fcc;
+    } 
+
+
+    /* .father-block-3 {
+        padding-top:100px;
+        padding-bottom:100px;
+    }
+    .block-3 {
+        background: #fcc;
+    } */
+
+    .absolute {
+        height: 50px;
+        width:100px;
+        background: #fcc;
+        
+        position:absolute;
+        margin: auto;
+        left:0;
+        right: 0;
+        top:0;
+        bottom:0;
+    }
+
+
+</style>
+</head>
+<body>
+    <h2>水平</h2>
+    <h5>行内元素</h2>
+    <div class="father father-inline-1">
+        <span class="inline-1">text-aligin:center;</span>
+    </div>
+
+
+    <h5>块元素 宽度固定</h2>
+    <div class="father">
+        <div class="block-1">margin:0 auto;</div>
+    </div>
+
+
+    <h5>浮动 宽度不固定</h2>
+    <div class="father father-float-1">
+        <div class="son-float-1">
+            <div class="float-1">需要三层</div>
+        </div>
+    </div>
+
+    <h5>浮动 宽度固定</h2>
+    <div class="father father-float-2">
+        <div class="float-2">position:relative;margin 一半的宽高 水平垂直都搞定</div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h2>垂直</h2>
+    <h5>行内元素</h2>
+    <div class="father father-inline-2">
+        <span class="inline-2">行内元素垂直</span>
+    </div>
+
+    <h5>块元素 高度固定</h2>
+    <div class="father father-block-2">
+        <div class="block-2">这个有点问题 还absolute吧</div>
+    </div>
+
+    <h5>块元素 高度不固定</h2>
+    <div class="father father-block-3">
+        <div class="block-3">高度不固定还居你妈了个逼 滚 居不了中</div>
+    </div>
+
+    
+
+
+
+
+    <h2>绝对定位</h2>
+    <div class="father">
+        <div class="absolute">left:0;right:0;</div>
+    </div>
+
+</body>
+</script>
+</html>

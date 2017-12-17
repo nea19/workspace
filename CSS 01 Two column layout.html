@@ -3,28 +3,50 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <style type="text/css">
     .main {height:200px;padding:20px;}
     .main div {height:100%;}
 
-    #left {width:100px;float: left;background-color: #ffffcc;}
-    #right {background-color: #ccffff;width: 100%;}
+    .left {width:80px;float: left;background-color: #ffffcc; margin-right: 20px;}
+    .right {background-color: #ccffff;}
+    .right2 {
+        margin-left:100px;
+    }
+    .right3 {
+        overflow:hidden;
+    }
 
-    .left {width:200px;float:left;background-color: #ffcccc;}
-    .right {width:200px;float:right;background-color: #ccffcc;}
-    .center {/*margin:0 100px;*/background-color: #cfcfcf;}
+    .l {width:80px;float:left;background-color: #ffcccc;margin-right:20px;}
+    .r {width:80px;float:right;background-color: #ccffcc;margin-left:20px;}
+    .center {background-color: #cfcfcf;}
+    .center2 {
+        margin:0 100px;
+    }
 </style>
 </head>
 <body>
     <div class='main'>
-        <div id="left">左边固定左边固定左边固定左边固定左边固定左边固定左边固定左边固定左边固定左边</div>
-        <div id="right">右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应右边自适应</div>
+        <div class="left">左边 float:left</div>
+        <div class="right">右边 不处理</div>
     </div>
     <div class='main'>
-        <div class="left">左边固定</div>
-        <div class="right">右边固定</div>
+        <div class="left">左边</div>
+        <div class="right right2">右边 margin-left:100px;</div>
+    </div>
+    <div class='main'>
+        <div class="left">左边</div>
+        <div class="right right3">右边 overflow:hidden;</div>
+    </div>
+    
+    <div class='main'>
+        <div class="l">左边固定</div>
+        <div class="r">右边固定</div>
         <div class="center">中间自适应</div>
+    </div>
+    <div class='main'>
+        <div class="l">左边固定</div>
+        <div class="r">右边固定</div>
+        <div class="center center2">中间自适应</div>
     </div>
 </body>
 <script>

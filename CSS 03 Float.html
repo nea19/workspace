@@ -41,12 +41,18 @@
 		width: 100px;
 		height: 100px;
 		background: yellow;
-		float: left;
+		/* float: left; */
 	}
 	.box:after {
 		content: '';
 		clear: both;
 		display: block;
+	}
+	#d1 {
+		float:left;
+	}
+	#d2 {
+		background:green;
 	}
 </style>
 </head>
@@ -79,9 +85,9 @@
 	</div> -->
 
 	<div class="box">
-		<div class="d1"></div>
-		<div class="d2"></div>
-		<div class="d3"></div>
+		<div id="d1">1</div>
+		<div id="d2">2</div>
+		<div id="d3">3</div>
 	</div>
 
 </body>
