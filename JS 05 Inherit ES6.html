@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+<script>
+    class Animal {
+        constructor(name) {
+            this.name = name || '动物';
+        }
+        eat(food) {
+            console.log(this.name+'吃'+(food || '食物'));
+        }
+    }
+    var someanimal = new Animal();
+    someanimal.eat();
+
+    var bird = new Animal('麻雀');
+    bird.eat();
+    bird.eat('虫子');
+
+    /*
+    继承1
+    */
+    class Cat extends Animal {
+    }
+    var cat = new Cat();
+    cat.eat();
+
+
+
+</script>
+</html>
