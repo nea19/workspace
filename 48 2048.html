@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+    div {
+        border-radius: 5px;
+    }
+    .area,.nav {
+        width: 68vw;
+        margin: 2vw auto;
+        
+        padding: 1vw;
+        display: flex;
+        background: rosybrown;
+        flex-wrap: wrap;
+    }
+    .nav {
+        justify-content: space-between;
+        color: white;
+    }
+    .total {
+        font-size: 10vw;
+        padding: 0 10vw;
+    }
+    .new {
+        line-height: 15vw;
+        font-size: 5vw;
+        padding: 0 10vw;
+    }
+    .area div {
+        width: 15vw;
+        height: 15vw;
+        margin: 1vw;
+        background: white;
+    }
+</style>
+</head>
+<body>
+    <div class="nav">
+        <div class="total" id="total">0</div>
+        <div class="new" id="new">新游戏</div>
+    </div>
+    <div class="area">
+        <div id="a1"></div>
+        <div id="a2"></div>
+        <div id="a3"></div>
+        <div id="a4"></div>
+
+        <div id="b1"></div>
+        <div id="b2"></div>
+        <div id="b3"></div>
+        <div id="b4"></div>
+
+        <div id="c1"></div>
+        <div id="c2"></div>
+        <div id="c3"></div>
+        <div id="c4"></div>
+
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+    </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    var xx = [1,2,3,4],
+        yy = ['a','b','c','d'];
+
+
+
+    function createOne(){
+        //随机一个位置
+        var randx = parseInt(Math.floor(Math.random()*4));
+        var randy = parseInt(Math.floor(Math.random()*4));
+        while(true){
+            if (board[randx][randy] == 0) 
+                break;
+            randx = parseInt(Math.floor(Math.random()*4));
+            randy = parseInt(Math.floor(Math.random()*4));
+        }
+        //随机一个数字
+        var randNumber = Math.random()<0.5 ?2 : 4;
+        //在随机位置显示随机数字
+        board[randx][randy] = randNumber;
+        showNumberWithAnimation(randx,randy,randNumber);
+        return true;
+    }
+</script>
+</html>
