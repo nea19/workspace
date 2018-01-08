@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>两栏布局 三栏布局</title>
 <style type="text/css">
     .main {height:200px;padding:20px;}
     .main div {height:100%;}
@@ -21,6 +21,16 @@
     .center {background-color: #cfcfcf;}
     .center2 {
         margin:0 100px;
+    }
+
+
+    .ll {
+        margin-right:80px;
+        
+    }
+    .rr {
+        width: 80px;
+        float:right;
     }
 </style>
 </head>
@@ -47,6 +57,11 @@
         <div class="l">左边固定</div>
         <div class="r">右边固定</div>
         <div class="center center2">中间自适应</div>
+    </div>
+
+    <div class="main">
+        <div class="ll">左边自适应</div>
+        <div class="right rr">右边固定</div>
     </div>
 </body>
 </html>
