@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+iframe {
+    width: 100%;
+}
+</style>
+</head>
+<body>
+    <div id="div">
+        <iframe id="iframe" frameborder="0" height="498" src="https://v.qq.com/iframe/player.html?vid=b0547dym4gh&amp;tiny=0&amp;auto=0" width="640"></iframe>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $('#div').click(function(){
+        alert('div');
+    });
+    $('#iframe').click(function(){
+        alert('iframe');
+    });
+
+
+
+    var IframeOnClick = {  
+    resolution: 200,  
+    iframes: [],  
+    interval: null,  
+    Iframe: function() {  
+        this.element = arguments[0];  
+        this.cb = arguments[1];   
+        this.hasTracked = false;  
+    },  
+    track: function(element, cb) {  
+        this.iframes.push(new this.Iframe(element, cb));  
+        if (!this.interval) {  
+            var _this = this;  
+            this.interval = setInterval(function() { _this.checkClick(); }, this.resolution);  
+        }  
+    },  
+    checkClick: function() {  
+        if (document.activeElement) {  
+            var activeElement = document.activeElement;  
+            for (var i in this.iframes) {  
+                if (activeElement === this.iframes[i].element) { // user is in this Iframe  
+                    if (this.iframes[i].hasTracked == false) {   
+                        this.iframes[i].cb.apply(window, []);   
+                        this.iframes[i].hasTracked = true;  
+                    }  
+                } else {  
+                    this.iframes[i].hasTracked = false;  
+                }  
+            }  
+        }  
+    }  
+};  
+IframeOnClick.track(document.getElementById("iframe"), function() { alert('a click'); }); 
+</script>
+</html>

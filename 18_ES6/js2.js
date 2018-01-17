@@ -1,0 +1,1 @@
+export function js2 (a, b) { return a + b; }
