@@ -1,0 +1,43 @@
+<!-- //Cannot read property 'nodeName' of null -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+    #wrap {
+        height: 200px;
+    }
+    #slider {
+        overflow-y: hidden;
+        max-height: 0;
+        -webkit-transition: all .5s cubic-bezier(0, 1, 0.5, 1);
+        transition: all .5s cubic-bezier(0, 1, 0.5, 1);
+        height: inherit;
+        width: inherit;
+    }
+    .active #slider {
+        max-height: 200px;
+    }
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="slider">
+            Blah blah blah blah blah....
+            Blah blah blah blah blah....
+            Blah blah blah blah blah....
+            Blah blah blah blah blah....
+            Blah blah blah blah blah....
+        </div>
+        <div id="toggle">点击展开</div>
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $('#toggle').click(function(){
+        $('#wrap').toggleClass('active');
+    })
+</script>
+</html>
